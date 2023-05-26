@@ -1,9 +1,10 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useEffect } from "react";
+import ReactModal from "react-modal";
 
 const UsersForm = ({ addUser, userSelected, editUser }) => {
-  const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit, reset, closeModal } = useForm();
 
   const emptyUser = {
     first_name: "",
@@ -31,7 +32,7 @@ const UsersForm = ({ addUser, userSelected, editUser }) => {
   };
 
   return (
-    <div className="input-content">
+    <div className="form-content">
       <form onSubmit={handleSubmit(submit)}>
         <h1>Crear Usuario</h1>
         <div className="input-wrapper">
@@ -54,7 +55,9 @@ const UsersForm = ({ addUser, userSelected, editUser }) => {
           <label htmlFor="birthday">Fecha de Nacimiento: </label>
           <input type="date" id="birthday" {...register("birthday")} />
         </div>
-        <button type="Submit">crear</button>
+        <button className="add-user" type="Submit" 
+        onClick={() => closeModal()}
+        >ADD NEW USER <box-icon name='check' ></box-icon></button>
       </form>
     </div>
   );
