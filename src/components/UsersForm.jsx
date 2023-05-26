@@ -1,10 +1,8 @@
-import React from "react";
 import { useForm } from "react-hook-form";
 import { useEffect } from "react";
-import ReactModal from "react-modal";
 
 const UsersForm = ({ addUser, userSelected, editUser }) => {
-  const { register, handleSubmit, reset, closeModal } = useForm();
+  const { register, handleSubmit, reset } = useForm();
 
   const emptyUser = {
     first_name: "",
@@ -27,37 +25,33 @@ const UsersForm = ({ addUser, userSelected, editUser }) => {
         editUser(data)
     }else {
         addUser(data)
-    }
-    
-  };
+    }};
 
   return (
     <div >
       <form onSubmit={handleSubmit(submit)}>
         <h1>Crear Usuario</h1>
         <div className="input-wrapper">
-          <label htmlFor="first_name">Nombre: </label>
+          <label htmlFor="first_name">First Name: </label>
           <input type="text" id="first_name" {...register("first_name")} />
         </div>
         <div className="input-wrapper">
-          <label htmlFor="last_name">Apellido: </label>
+          <label htmlFor="last_name">Last Name: </label>
           <input type="text" id="last_name" {...register("last_name")} />
         </div>
         <div className="input-wrapper">
-          <label htmlFor="email">email: </label>
+          <label htmlFor="email">Email: </label>
           <input type="text" id="email" {...register("email")} />
         </div>
         <div className="input-wrapper">
-          <label htmlFor="password">Contraseña: </label>
+          <label htmlFor="password">Password: </label>
           <input type="password" id="password" {...register("password")} />
         </div>
         <div className="input-wrapper">
-          <label htmlFor="birthday">Fecha de Nacimiento: </label>
+          <label htmlFor="birthday">Birthday: </label>
           <input type="date" id="birthday" {...register("birthday")} />
         </div>
-        <button className="add-user" type="Submit" 
-        onClick={() => closeModal()}
-        >ADD <box-icon name='check' color='#fffefe' size='sm'></box-icon></button>
+        <button className="add-user" type="Submit">ADD<box-icon name='check' color='#fffefe' size='sm'/></button>
       </form>
     </div>
   );

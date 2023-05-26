@@ -12,9 +12,11 @@ h1 {
     margin: 20px;
 }
 
+
 button{
     border: none;
     border-radius: 7px;
+    cursor: pointer;
 }
 
 form{
@@ -54,6 +56,7 @@ input{
     box-shadow: 1px 1px 5px 0.5px rgba(0, 0, 0, 0.3);
     border-radius: 8px;
     width: 18rem;
+    max-height: 250px;
     position: relative;
 }
 
@@ -62,11 +65,15 @@ input{
     opacity: 50%;
 }
 
+.user-card--name{
+    overflow: hidden;
+    word-wrap: none;
+}
+
 /* ICONS */
 .cake {
     padding: 4px;
 }
-
 
 /* BUTTONS */
 .trash{
@@ -95,7 +102,6 @@ input{
 .sign-up-button{
     background-color: chartreuse;
     padding: 7px 15px;
-
     margin: 20px;    
 }
 
@@ -111,8 +117,6 @@ input{
     transform: translate(-50%, -50%);
     display: flex;
     align-items: center;
-    cursor: pointer;
-
 }
 
 /* Responsive */
