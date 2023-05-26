@@ -17,6 +17,16 @@ button{
     border-radius: 7px;
 }
 
+form{
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .header {
     display: flex;
     align-items: center;
@@ -29,20 +39,22 @@ button{
     place-content: center;
 }
 
-.input-wrapper {
-    margin: 10px;
-    text-align: center;
+input{
+    width: 20rem;
+    height: 30px;
+    margin: 0.5rem;
 }
 
 /* USER CARD */
 .user-card{
     display:inline-block;
     margin: 2%;
-    padding: 2%;
+    padding: 3% 3% 10%;
     border: none;
     box-shadow: 1px 1px 5px 0.5px rgba(0, 0, 0, 0.3);
     border-radius: 8px;
-    width: 20rem;
+    width: 18rem;
+    position: relative;
 }
 
 .user-card--title {
@@ -55,11 +67,15 @@ button{
     padding: 4px;
 }
 
+
 /* BUTTONS */
 .trash{
     background-color: #c5283d;
     padding: 7px;
     margin: 10px;
+    position: absolute;
+    right: 0;
+    top:70%
 }
 
 .edit{
@@ -67,10 +83,13 @@ button{
     padding: 7px;
     border: 1px;
     margin: 10px;
-
+    position: absolute;
+    right: 15%;
+    top:70%
 } 
 .close-button{
     background-color: red;
+    border-radius: 20px;
 }
 
 .sign-up-button{
@@ -90,5 +109,17 @@ button{
     top: 85%;
     left: 50%;
     transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 
 }
+
+/* Responsive */
+
+@media (max-width: 390px) {
+   .edit,
+   .trash {
+    padding: 3px;
+   }
+  }

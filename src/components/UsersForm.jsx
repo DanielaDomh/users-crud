@@ -32,7 +32,7 @@ const UsersForm = ({ addUser, userSelected, editUser }) => {
   };
 
   return (
-    <div className="form-content">
+    <div >
       <form onSubmit={handleSubmit(submit)}>
         <h1>Crear Usuario</h1>
         <div className="input-wrapper">
@@ -57,7 +57,7 @@ const UsersForm = ({ addUser, userSelected, editUser }) => {
         </div>
         <button className="add-user" type="Submit" 
         onClick={() => closeModal()}
-        >ADD NEW USER <box-icon name='check' ></box-icon></button>
+        >ADD <box-icon name='check' color='#fffefe' size='sm'></box-icon></button>
       </form>
     </div>
   );
